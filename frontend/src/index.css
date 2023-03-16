@@ -37,3 +37,13 @@ body {
   font-weight: 600;
   color: #262626;
 }
+
+.react-multi-carousel-dot-list {
+  top: 92%;
+}
+
+@media screen and (min-width: 1024px) {
+  .react-multi-carousel-dot-list {
+    top: 95%;
+  }
+}

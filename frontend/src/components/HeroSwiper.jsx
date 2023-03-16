@@ -1,67 +1,78 @@
-import { useState } from "react";
+import Carousel from "react-multi-carousel";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
-import { GoPrimitiveDot } from "react-icons/go";
+import "react-multi-carousel/lib/styles.css";
 
-const HeroSwiper = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const slides = [
-    { url: "/images/heroSwiper/heroSwiper1.jpg" },
-    { url: "/images/heroSwiper/heroSwiper2.jpg" },
-    { url: "/images/heroSwiper/heroSwiper3.jpg" },
-  ];
-
-  const prevSlide = () => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
+const BestSellersCarousel = () => {
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 1440 },
+      items: 1,
+    },
+    largeDesktop: {
+      breakpoint: { max: 1440, min: 1024 },
+      items: 1,
+    },
+    desktop: {
+      breakpoint: { max: 1024, min: 768 },
+      items: 1,
+    },
+    tablet: {
+      breakpoint: { max: 768, min: 425 },
+      items: 1,
+    },
+    mobile: {
+      breakpoint: { max: 425, min: 0 },
+      items: 1,
+    },
   };
 
-  const nextSlide = () => {
-    const isLastSlide = currentIndex === slides.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
+  const CustomLeftArrow = ({ onClick }) => {
+    return (
+      <button
+        className="absolute left-1 bg-black/20 rounded-full p-1 focus:outline-black"
+        onClick={onClick}
+      >
+        <BsChevronCompactLeft className="text-3xl" fill="#fff" />
+      </button>
+    );
   };
 
-  const goToSlide = (slideIndex) => {
-    setCurrentIndex(slideIndex);
+  const CustomRightArrow = ({ onClick }) => {
+    return (
+      <button
+        className="absolute right-1 bg-black/20 rounded-full p-1 focus:outline-black"
+        onClick={onClick}
+      >
+        <BsChevronCompactRight className="text-3xl" fill="#fff" />
+      </button>
+    );
   };
 
   return (
-    <div className="w-full h-[300px] md:h-[500px] relative">
-      <div
-        className="w-full h-full transition-all duration-500"
-        style={{
-          backgroundImage: `url(${slides[currentIndex].url})`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "top",
-        }}
-      ></div>
-      <button
-        onClick={prevSlide}
-        type="button"
-        className="absolute top-[50%] left-1 -translate-y-[50%] cursor-pointer rounded-full p-1 "
+    <div className="mt-8">
+      <Carousel
+        draggable={false}
+        infinite={true}
+        customRightArrow={<CustomRightArrow />}
+        customLeftArrow={<CustomLeftArrow />}
+        dotListClass="react-multi-carousel-dot-list"
+        showDots={true}
+        removeArrowOnDeviceType={["mobile"]}
+        responsive={responsive}
+        className="h-[270px] md:h-[400px] lg:h-[500px]"
       >
-        <BsChevronCompactLeft fill="#fff" size={30} />
-      </button>
-      <button
-        onClick={nextSlide}
-        type="button"
-        className="absolute top-[50%] right-1 -translate-y-[50%] cursor-pointer rounded-full p-1 "
-      >
-        <BsChevronCompactRight fill="#fff" size={30} />
-      </button>
-      <div className="flex justify-center py-1">
-        {slides.map((slide, slideIndex) => (
-          <button key={slideIndex} onClick={() => goToSlide(slideIndex)}>
-            <GoPrimitiveDot
-              fill={slideIndex === currentIndex ? "#d4be8a" : "#e7e5e4"}
-            />
-          </button>
-        ))}
-      </div>
+        <div>
+          <img src="/images/heroSwiper/heroSwiper1.jpg" alt="slider" />
+        </div>
+        <div>
+          <img src="/images/heroSwiper/heroSwiper2.jpg" alt="slider" />
+        </div>
+        <div>
+          <img src="/images/heroSwiper/heroSwiper3.jpg" alt="slider" />
+        </div>
+      </Carousel>
     </div>
   );
 };
-export default HeroSwiper;
+export default BestSellersCarousel;

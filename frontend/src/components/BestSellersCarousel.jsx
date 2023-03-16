@@ -5,7 +5,11 @@ import { Rating } from "../components/index";
 import Carousel from "react-multi-carousel";
 import { toast } from "react-toastify";
 import { RiShoppingCartLine } from "react-icons/ri";
-import { BsHeartFill } from "react-icons/bs";
+import {
+  BsChevronCompactLeft,
+  BsChevronCompactRight,
+  BsHeartFill,
+} from "react-icons/bs";
 import "react-multi-carousel/lib/styles.css";
 import { getTopProducts } from "../features/product/productSlice";
 import { addItemToCart } from "../features/cart/cartSlice";
@@ -53,12 +57,16 @@ const BestSellersCarousel = () => {
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 1024 },
-      items: 5,
+      breakpoint: { max: 4000, min: 1440 },
+      items: 4,
+    },
+    largeDesktop: {
+      breakpoint: { max: 1440, min: 1024 },
+      items: 3,
     },
     desktop: {
       breakpoint: { max: 1024, min: 768 },
-      items: 4,
+      items: 3,
     },
     tablet: {
       breakpoint: { max: 768, min: 425 },
@@ -70,17 +78,44 @@ const BestSellersCarousel = () => {
     },
   };
 
+  const CustomLeftArrow = ({ onClick }) => {
+    return (
+      <button
+        className="absolute -left-3 rounded-full p-1 focus:outline-black"
+        onClick={onClick}
+      >
+        <BsChevronCompactLeft className="text-3xl" fill="#1c1917" />
+      </button>
+    );
+  };
+
+  const CustomRightArrow = ({ onClick }) => {
+    return (
+      <button
+        className="absolute -right-3 rounded-full p-1 focus:outline-black"
+        onClick={onClick}
+      >
+        <BsChevronCompactRight className="text-3xl" fill="#1c1917" />
+      </button>
+    );
+  };
+
   return (
     <div className="mt-8">
       <Carousel
+        draggable={false}
+        customRightArrow={<CustomRightArrow />}
+        customLeftArrow={<CustomLeftArrow />}
+        dotListClass="react-multi-carousel-dot-list"
         showDots={true}
         removeArrowOnDeviceType={["mobile"]}
         responsive={responsive}
+        className="h-[310px] lg:h-[360px]"
       >
         {topProducts.map((product) => (
           <div key={product._id} className="flex justify-center">
             <div
-              className="bg-white w-[90%] shadow-sm shadow-stone-200 rounded-sm p-2 pt-6 mb-1 relative"
+              className="bg-white w-[200px] md:w-[190px] xl:w-[220px] shadow-sm shadow-stone-200 rounded-sm p-2 pt-6 mb-1 relative"
               key={product._id}
             >
               <div className="">
@@ -89,11 +124,11 @@ const BestSellersCarousel = () => {
                     <img
                       src={product.image}
                       alt="product"
-                      className="w-[90px] md:w-[90px] lg:w-[140px]"
+                      className="w-[90px] md:w-[90px] lg:w-[120px]"
                     />
                   </Link>
                 </div>
-                <div className="text-right md:text-left mt-2 md:mt-0">
+                <div className="text-left mt-2 md:mt-0">
                   <Link
                     to={`/product/${product._id}`}
                     className="relative hover:underline"

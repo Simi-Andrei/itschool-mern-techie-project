@@ -3,7 +3,7 @@ import Heading from "../components/Heading";
 import { BsArrowRight } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
 import { RiShoppingCartLine } from "react-icons/ri";
-import { Rating, Page } from "../components/index";
+import { Rating, Page, Wrapper } from "../components/index";
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart } from "../features/cart/cartSlice";
@@ -33,7 +33,7 @@ const Favoritespage = () => {
   return (
     <Page>
       {favoriteItems.length === 0 ? (
-        <div className="bg-white h-64 w-full flex flex-col items-center justify-center shadow-sm shadow-stone-200">
+        <div className="bg-white w-full flex flex-col items-center justify-center shadow-sm shadow-stone-200">
           <div className="flex flex-col lg:flex-row items-center">
             <p className="mr-4 tracking-tighter text-center">
               You have no favorite products right now
@@ -52,60 +52,61 @@ const Favoritespage = () => {
       ) : (
         <div>
           <Heading text="Favorites" button address={-1} />
-          <div className="flex flex-wrap items-start justify-between mt-1">
+          <div className="flex flex-wrap items-start justify-between">
             {favoriteItems.map((product) => (
-              <div
-                className="bg-white w-full md:w-[32.9%] xl:w-[24.7%] shadow-sm shadow-stone-200 rounded-sm p-2 pt-6 mb-1 relative"
-                key={product._id}
-              >
-                <div className="flex items-start justify-between md:block">
-                  <div className="grid place-items-center">
-                    <Link to={`/product/${product._id}`}>
-                      <img
-                        src={product.image}
-                        alt="product"
-                        className="w-[90px] md:w-[90px] lg:w-[140px]"
-                      />
-                    </Link>
-                  </div>
-                  <div className="text-right md:text-left mt-2 md:mt-0">
-                    <Link
-                      to={`/product/${product._id}`}
-                      className="relative hover:underline"
-                    >
-                      <p className="tracking-tighter text-sm mt-4">
-                        {product.name}
-                      </p>
-                    </Link>
-                    <p className="tracking-tighter cursor-default my-1 text-lg">
-                      ${product.price}
-                    </p>
-                    <div className="w-full flex items-center">
-                      <Rating value={product.rating} />{" "}
-                      <span className="ml-2 text-xs">
-                        {product.numReviews} reviews
-                      </span>
+              <div className="w-full md:w-[32.9%] xl:w-[24.7%]">
+                <Wrapper key={product._id} className="pt-6 relative">
+                  <div className="flex items-start justify-between md:block">
+                    <div className="grid place-items-center">
+                      <Link to={`/product/${product._id}`}>
+                        <img
+                          src={product.image}
+                          alt="product"
+                          className="w-[90px] md:w-[90px] lg:w-[140px]"
+                        />
+                      </Link>
                     </div>
-                    <div className="mt-4 flex items-center justify-end">
-                      <button
-                        onClick={() => addItemToCartHandler(product._id)}
-                        className="w-full bg-stone-900 rounded-sm uppercase text-white text-xs py-2 px-4 hover:bg-stone-800 disabled:bg-stone-500 flex items-center justify-center"
-                        disabled={product.stock === 0}
+                    <div className="text-right md:text-left mt-2 md:mt-0">
+                      <Link
+                        to={`/product/${product._id}`}
+                        className="relative hover:underline"
                       >
-                        <RiShoppingCartLine className="text-[0.9rem] mr-1" />
-                        <span className="ml-1">
-                          {product.stock === 0 ? "Out of stock" : "Add to cart"}
+                        <p className="tracking-tighter text-sm mt-4">
+                          {product.name}
+                        </p>
+                      </Link>
+                      <p className="tracking-tighter cursor-default my-1 text-lg">
+                        ${product.price}
+                      </p>
+                      <div className="w-full flex items-center">
+                        <Rating value={product.rating} />{" "}
+                        <span className="ml-2 text-xs">
+                          {product.numReviews} reviews
                         </span>
-                      </button>
+                      </div>
+                      <div className="mt-4 flex items-center justify-end">
+                        <button
+                          onClick={() => addItemToCartHandler(product._id)}
+                          className="w-full bg-stone-900 rounded-sm uppercase text-white text-xs py-2 px-4 hover:bg-stone-800 disabled:bg-stone-500 flex items-center justify-center"
+                          disabled={product.stock === 0}
+                        >
+                          <RiShoppingCartLine className="text-[0.9rem] mr-1" />
+                          <span className="ml-1">
+                            {product.stock === 0
+                              ? "Out of stock"
+                              : "Add to cart"}
+                          </span>
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <button
-                  onClick={() => removeItemFromFavoritesHandler(product._id)}
-                  className="bg-white absolute top-0 right-0 rounded-md mt-2 mr-2 p-2 shadow-inner"
-                >
-                  <IoMdClose fill="#1c1917" />
-                </button>
+                  <button
+                    onClick={() => removeItemFromFavoritesHandler(product._id)}
+                    className="bg-white absolute top-0 right-0 rounded-md mt-2 mr-2 p-2 shadow-inner"
+                  >
+                    <IoMdClose fill="#1c1917" />
+                  </button>
+                </Wrapper>
               </div>
             ))}
           </div>
