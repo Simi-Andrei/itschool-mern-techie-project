@@ -39,11 +39,11 @@ body {
 }
 
 .react-multi-carousel-dot-list {
-  top: 92%;
+  top: 93%;
 }
 
 @media screen and (min-width: 1024px) {
   .react-multi-carousel-dot-list {
-    top: 95%;
+    top: 94%;
   }
 }

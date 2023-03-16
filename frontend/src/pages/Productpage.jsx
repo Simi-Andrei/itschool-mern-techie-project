@@ -14,6 +14,7 @@ import {
   removeItemFromFavorites,
 } from "../features/favorites/favoritesSlice";
 import { createReview, reset } from "../features/reviews/reviewSlice";
+import RelatedProductsCarousel from "../components/RelatedProductsCarousel";
 
 const Productpage = () => {
   const [rating, setRating] = useState(null);
@@ -421,6 +422,10 @@ const Productpage = () => {
           </Wrapper>
         </>
       )}
+      <h2 className="mt-20 text-xl tracking-tighter text-center">
+        Find below related products for {product.name}
+      </h2>
+      <RelatedProductsCarousel category={product.category} />
     </Page>
   );
 };

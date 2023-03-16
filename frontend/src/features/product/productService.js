@@ -53,7 +53,7 @@ const getProductCategories = async () => {
   return data;
 };
 
-// get product categories
+// get products by category
 const getProductsByCategory = async (category) => {
   const { data } = await axios.get(`/api/products/category/${category}`);
   return data;

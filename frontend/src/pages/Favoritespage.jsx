@@ -54,8 +54,11 @@ const Favoritespage = () => {
           <Heading text="Favorites" button address={-1} />
           <div className="flex flex-wrap items-start justify-between">
             {favoriteItems.map((product) => (
-              <div className="w-full md:w-[32.9%] xl:w-[24.7%]">
-                <Wrapper key={product._id} className="pt-6 relative">
+              <div
+                className="w-full md:w-[32.9%] xl:w-[24.7%]"
+                key={product._id}
+              >
+                <Wrapper className="pt-6 relative">
                   <div className="flex items-start justify-between md:block">
                     <div className="grid place-items-center">
                       <Link to={`/product/${product._id}`}>

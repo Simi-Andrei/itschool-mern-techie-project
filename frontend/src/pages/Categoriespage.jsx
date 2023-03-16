@@ -35,7 +35,7 @@ const Categoriespage = () => {
                       <img
                         src="/images/productImages/inEar1.png"
                         alt="headphones"
-                        className="w-[100px] md:w-[120px] xl:w-[130px]"
+                        className="w-[100px] md:w-[120px]"
                       />
                     </div>
                   </div>
@@ -56,7 +56,7 @@ const Categoriespage = () => {
                       <img
                         src="/images/productImages/watch1.png"
                         alt="watch"
-                        className="w-[100px] md:w-[120px] xl:w-[130px]"
+                        className="w-[100px] md:w-[120px]"
                       />
                     </div>
                   </div>
@@ -77,7 +77,7 @@ const Categoriespage = () => {
                       <img
                         src="/images/productImages/onEar1.png"
                         alt="headset"
-                        className="w-[100px] md:w-[120px] xl:w-[130px]"
+                        className="w-[100px] md:w-[120px]"
                       />
                     </div>
                   </div>
@@ -98,7 +98,7 @@ const Categoriespage = () => {
                       <img
                         src="/images/productImages/speaker1.png"
                         alt="speaker"
-                        className="w-[100px] md:w-[120px] xl:w-[130px]"
+                        className="w-[100px] md:w-[120px]"
                       />
                     </div>
                   </div>
@@ -119,7 +119,7 @@ const Categoriespage = () => {
                       <img
                         src="/images/productImages/mouse1.png"
                         alt="mouse"
-                        className="w-[100px] md:w-[120px] xl:w-[130px]"
+                        className="w-[100px] md:w-[120px]"
                       />
                     </div>
                   </div>
@@ -140,7 +140,7 @@ const Categoriespage = () => {
                       <img
                         src="/images/productImages/webcam1.png"
                         alt="webcam"
-                        className="w-[100px] md:w-[120px] xl:w-[130px]"
+                        className="w-[100px] md:w-[120px]"
                       />
                     </div>
                   </div>
@@ -161,7 +161,7 @@ const Categoriespage = () => {
                       <img
                         src="/images/productImages/camera1.png"
                         alt="cam"
-                        className="w-[100px] md:w-[120px] xl:w-[130px]"
+                        className="w-[100px] md:w-[120px]"
                       />
                     </div>
                   </div>
@@ -182,7 +182,7 @@ const Categoriespage = () => {
                       <img
                         src="/images/productImages/mic1.png"
                         alt="mic"
-                        className="w-[100px] md:w-[120px] xl:w-[130px]"
+                        className="w-[100px] md:w-[120px]"
                       />
                     </div>
                   </div>
