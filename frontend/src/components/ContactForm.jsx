@@ -61,6 +61,7 @@ const ContactForm = () => {
               name="from_name"
               className="form-input bg-transparent border-b border-b-stone-200 pt-2 focus:outline-none w-full"
               placeholder=" "
+              required
             />
             <label className="form-label block absolute cursor-text bottom-0.5 left-0 tracking-wider transition-all duration-200 pointer-events-none">
               Name
@@ -72,6 +73,7 @@ const ContactForm = () => {
               name="user_email"
               className="form-input bg-transparent border-b border-b-stone-200 pt-2 focus:outline-none w-full"
               placeholder=" "
+              required
             />
             <label className="form-label block absolute cursor-text bottom-0.5 left-0 tracking-wider transition-all duration-200 pointer-events-none">
               Email
@@ -83,6 +85,7 @@ const ContactForm = () => {
               name="message"
               className="form-input bg-transparent border-b border-b-stone-200 pt-2 focus:outline-none w-full"
               placeholder=" "
+              required
             />
             <label className="form-label block absolute cursor-text bottom-0.5 left-0 tracking-wider transition-all duration-200 pointer-events-none">
               Message

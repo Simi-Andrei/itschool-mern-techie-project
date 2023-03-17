@@ -38,11 +38,25 @@ body {
   color: #262626;
 }
 
-.react-multi-carousel-dot-list {
-  top: 93%;
+@media (min-width: 320px) and (max-width: 375px) {
+  .react-multi-carousel-dot-list {
+    top: 92.5%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .react-multi-carousel-dot-list {
+    top: 94%;
+  }
 }
 
 @media screen and (min-width: 1024px) {
+  .react-multi-carousel-dot-list {
+    top: 90%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
   .react-multi-carousel-dot-list {
     top: 94%;
   }

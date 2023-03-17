@@ -50,7 +50,7 @@ const BestSellersCarousel = () => {
   };
 
   return (
-    <div className="mt-8">
+    <div>
       <Carousel
         draggable={false}
         infinite={true}
