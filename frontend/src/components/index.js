@@ -6,6 +6,7 @@ import Rating from "./Rating";
 import Wrapper from "./Wrapper";
 import HeroSwiper from "./HeroSwiper";
 import BestSellersCarousel from "./BestSellersCarousel";
+import ContactForm from "./ContactForm";
 
 export {
   Heading,
@@ -16,4 +17,5 @@ export {
   Wrapper,
   HeroSwiper,
   BestSellersCarousel,
+  ContactForm,
 };

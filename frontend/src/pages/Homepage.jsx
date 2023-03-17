@@ -1,4 +1,9 @@
-import { Page, HeroSwiper, BestSellersCarousel } from "../components/index";
+import {
+  Page,
+  HeroSwiper,
+  BestSellersCarousel,
+  ContactForm,
+} from "../components/index";
 
 const Homepage = () => {
   return (
@@ -12,6 +17,7 @@ const Homepage = () => {
         products
       </h2>
       <BestSellersCarousel />
+      <ContactForm />
     </Page>
   );
 };

@@ -227,7 +227,7 @@ const Productpage = () => {
                 <div className="w-full md:w-48">
                   <div className="flex flex-col relative">
                     <p className="text-xs font-semibold tracking-widest">
-                      Excellent - {fiveStarReviews * 100}%
+                      Excellent - {fiveStarReviews.toFixed(2) * 100}%
                     </p>
                     <span className="h-2 w-full bg-stone-200 rounded-full"></span>
                     <span
@@ -239,7 +239,7 @@ const Productpage = () => {
                   </div>
                   <div className="flex flex-col relative">
                     <p className="text-xs font-semibold tracking-widest">
-                      Good - {fourStarReviews * 100}%
+                      Good - {fourStarReviews.toFixed(2) * 100}%
                     </p>
                     <span className="h-2 w-full bg-stone-200 rounded-full"></span>
                     <span
@@ -251,7 +251,7 @@ const Productpage = () => {
                   </div>
                   <div className="flex flex-col relative">
                     <p className="text-xs font-semibold tracking-widest">
-                      Acceptable - {threeStarReviews * 100}%
+                      Acceptable - {threeStarReviews.toFixed(2) * 100}%
                     </p>
                     <span className="h-2 w-full bg-stone-200 rounded-full"></span>
                     <span
@@ -263,7 +263,7 @@ const Productpage = () => {
                   </div>
                   <div className="flex flex-col relative">
                     <p className="text-xs font-semibold tracking-widest">
-                      Poor quality - {twoStarReviews * 100}%
+                      Poor quality - {twoStarReviews.toFixed(2) * 100}%
                     </p>
                     <span className="h-2 w-full bg-stone-200 rounded-full"></span>
                     <span
@@ -275,7 +275,7 @@ const Productpage = () => {
                   </div>
                   <div className="flex flex-col relative">
                     <p className="text-xs font-semibold tracking-widest">
-                      Would not recommend - {oneStarReviews * 100}%
+                      Would not recommend - {oneStarReviews.toFixed(2) * 100}%
                     </p>
                     <span className="h-2 w-full bg-stone-200 rounded-full"></span>
                     <span

@@ -16,8 +16,8 @@ body {
   background-color: #fafaf9;
 }
 
-.category-item {
-  background: linear-gradient(45deg, #a8832f 0%, #bfa25c 100%);
+.gradient {
+  background: linear-gradient(45deg, #d1b87b 0%, #bfa25c 100%);
 }
 
 .form-input:focus ~ .form-label,

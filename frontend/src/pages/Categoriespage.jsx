@@ -27,7 +27,7 @@ const Categoriespage = () => {
                   key={category}
                   to="/search/category/inEarHeadphones"
                 >
-                  <div className="category-item group-hover:brightness-95 rounded-sm bg-white grid place-items-center h-44 border relative shadow-sm shadow-stone-200">
+                  <div className="gradient group-hover:brightness-95 rounded-sm bg-white grid place-items-center h-44 border relative shadow-sm shadow-stone-200">
                     <p className="absolute bottom-1 left-2 uppercase text-white">
                       Headphones
                     </p>
@@ -48,7 +48,7 @@ const Categoriespage = () => {
                   key={category}
                   to="/search/category/watches"
                 >
-                  <div className="category-item group-hover:brightness-95 rounded-sm bg-white grid place-items-center h-44 border relative shadow-sm shadow-stone-200">
+                  <div className="gradient group-hover:brightness-95 rounded-sm bg-white grid place-items-center h-44 border relative shadow-sm shadow-stone-200">
                     <p className="absolute bottom-1 left-2 uppercase text-white">
                       Watches
                     </p>
@@ -69,7 +69,7 @@ const Categoriespage = () => {
                   key={category}
                   to="/search/category/onEarHeadsets"
                 >
-                  <div className="category-item group-hover:brightness-95 rounded-sm bg-white grid place-items-center h-44 border relative shadow-sm shadow-stone-200">
+                  <div className="gradient group-hover:brightness-95 rounded-sm bg-white grid place-items-center h-44 border relative shadow-sm shadow-stone-200">
                     <p className="absolute bottom-1 left-2 uppercase text-white">
                       Headsets
                     </p>
@@ -90,7 +90,7 @@ const Categoriespage = () => {
                   key={category}
                   to="/search/category/speakers"
                 >
-                  <div className="category-item group-hover:brightness-95 rounded-sm bg-white grid place-items-center h-44 border relative shadow-sm shadow-stone-200">
+                  <div className="gradient group-hover:brightness-95 rounded-sm bg-white grid place-items-center h-44 border relative shadow-sm shadow-stone-200">
                     <p className="absolute bottom-1 left-2 uppercase text-white">
                       Speakers
                     </p>
@@ -111,7 +111,7 @@ const Categoriespage = () => {
                   key={category}
                   to="/search/category/mouses"
                 >
-                  <div className="category-item group-hover:brightness-95 rounded-sm bg-white grid place-items-center h-44 border relative shadow-sm shadow-stone-200">
+                  <div className="gradient group-hover:brightness-95 rounded-sm bg-white grid place-items-center h-44 border relative shadow-sm shadow-stone-200">
                     <p className="absolute bottom-1 left-2 uppercase text-white">
                       Mouses
                     </p>
@@ -132,7 +132,7 @@ const Categoriespage = () => {
                   key={category}
                   to="/search/category/webcams"
                 >
-                  <div className="category-item group-hover:brightness-95 rounded-sm bg-white grid place-items-center h-44 border relative shadow-sm shadow-stone-200">
+                  <div className="gradient group-hover:brightness-95 rounded-sm bg-white grid place-items-center h-44 border relative shadow-sm shadow-stone-200">
                     <p className="absolute bottom-1 left-2 uppercase text-white">
                       Webcams
                     </p>
@@ -153,7 +153,7 @@ const Categoriespage = () => {
                   key={category}
                   to="/search/category/cams"
                 >
-                  <div className="category-item group-hover:brightness-95 rounded-sm bg-white grid place-items-center h-44 border relative shadow-sm shadow-stone-200">
+                  <div className="gradient group-hover:brightness-95 rounded-sm bg-white grid place-items-center h-44 border relative shadow-sm shadow-stone-200">
                     <p className="absolute bottom-1 left-2 uppercase text-white">
                       Cameras
                     </p>
@@ -174,7 +174,7 @@ const Categoriespage = () => {
                   key={category}
                   to="/search/category/mics"
                 >
-                  <div className="category-item group-hover:brightness-95 rounded-sm bg-white grid place-items-center h-44 border relative shadow-sm shadow-stone-200">
+                  <div className="gradient group-hover:brightness-95 rounded-sm bg-white grid place-items-center h-44 border relative shadow-sm shadow-stone-200">
                     <p className="absolute bottom-1 left-2 uppercase text-white">
                       Microphones
                     </p>

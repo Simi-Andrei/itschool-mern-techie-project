@@ -65,7 +65,7 @@ const Loginpage = () => {
         <form
           onSubmit={formik.handleSubmit}
           autoComplete="off"
-          className="w-full md:w-64 text-sm"
+          className="w-full md:w-64"
         >
           <div className="form-group my-8 relative">
             <input
