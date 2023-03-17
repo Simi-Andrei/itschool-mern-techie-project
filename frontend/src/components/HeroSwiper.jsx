@@ -60,7 +60,7 @@ const BestSellersCarousel = () => {
         showDots={true}
         removeArrowOnDeviceType={["mobile"]}
         responsive={responsive}
-        className="h-[270px] md:h-[400px] lg:h-[500px]"
+        className="h-[280px] md:h-[400px] lg:h-[500px]"
       >
         <div>
           <img src="/images/heroSwiper/heroSwiper1.jpg" alt="slider" />
