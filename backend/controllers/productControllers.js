@@ -139,9 +139,14 @@ const getProductsCategories = asyncHandler(async (req, res) => {
 const createReview = asyncHandler(async (req, res) => {
   const { rating, comment } = req.body;
 
-  if (!rating || !comment) {
+  if (!comment) {
     res.status(400);
-    throw new Error("Please fill in all the fields");
+    throw new Error("Please add a comment");
+  }
+
+  if (!rating) {
+    res.status(400);
+    throw new Error("Please select rating");
   }
 
   const { id } = req.params;

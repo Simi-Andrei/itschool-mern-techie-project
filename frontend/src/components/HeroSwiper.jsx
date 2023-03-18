@@ -57,8 +57,7 @@ const BestSellersCarousel = () => {
         customRightArrow={<CustomRightArrow />}
         customLeftArrow={<CustomLeftArrow />}
         dotListClass="react-multi-carousel-dot-list"
-        showDots={true}
-        removeArrowOnDeviceType={["mobile"]}
+        showDots={false}
         responsive={responsive}
         className="h-[280px] md:h-[400px] lg:h-[500px]"
       >

@@ -37,7 +37,7 @@ const Searchpage = () => {
         <div className="md:hidden w-full">
           <Wrapper>
             <button
-              className="h-6 w-full flex items-center justify-center font-semibold focus:outline-black"
+              className="h-6 w-full center font-semibold focus:outline-black"
               onClick={() => setFilterMenuOpen(!filterMenuOpen)}
             >
               <FaFilter className="mr-1" />
@@ -119,7 +119,7 @@ const Searchpage = () => {
           </ul>
         </Wrapper>
         <div className="w-full md:w-[73.3%] xl:w-[77.3%]">
-          <Wrapper className="flex items-center justify-center md:justify-start h-10">
+          <Wrapper className="center md:justify-start h-10">
             <span className="mr-2 font-semibold">Sort by</span>
             <select
               value={order}

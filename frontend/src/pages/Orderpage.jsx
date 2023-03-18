@@ -136,7 +136,7 @@ const Orderpage = () => {
                 {order.items.map((item) => (
                   <div
                     key={item._id}
-                    className="flex items-center justify-between mt-2 pb-2 border-b border-b-secondary last:border-b-0 text-xs xl:text-sm"
+                    className="items-between mt-2 pb-2 border-b border-b-secondary last:border-b-0 text-xs xl:text-sm"
                   >
                     <div className="w-3/12 grid place-items-center">
                       <img src={item.image} alt="product" width={50} />
@@ -165,14 +165,14 @@ const Orderpage = () => {
             <Wrapper>
               {order.items.length > 0 && (
                 <div className="flex flex-col">
-                  <div className="flex items-center justify-between my-2">
+                  <div className="items-between my-2">
                     <p>Products price:</p>
                     <p className="font-semibold">
                       ${order.itemsPrice.toFixed(2)}
                     </p>
                   </div>
                   <div className="flex flex-col  border-b border-b-secondary pb-2">
-                    <div className="flex items-center justify-between">
+                    <div className="items-between">
                       <p>Delivery price:</p>
                       <p className="font-semibold">
                         ${order.deliveryPrice.toFixed(2)}
@@ -182,7 +182,7 @@ const Orderpage = () => {
                       (free delivery for orders above $50)*
                     </p>
                   </div>
-                  <div className="flex items-center justify-between font-semibold mt-2">
+                  <div className="items-between font-semibold mt-2">
                     <p>Total price:</p>
                     <p>${order.totalPrice.toFixed(2)}</p>
                   </div>
@@ -225,7 +225,7 @@ const Orderpage = () => {
                     <div className="text-center mt-4">
                       <Link
                         to="/categories"
-                        className="bg-secondary border border-secondary text-white font-light py-2 px-8 tracking-widest hover:text-secondary hover:bg-white transition-all duration-200 flex items-center justify-center relative group uppercase"
+                        className="bg-secondary border border-secondary text-white font-light py-2 px-8 tracking-widest hover:text-secondary hover:bg-white transition-all duration-200 center relative group uppercase"
                       >
                         Back to shop
                         <span className="absolute top-1/2 -translate-y-1/2 right-14 opacity-0 pointer-events-none group-hover:opacity-100 transition-all duration-200 text-secondary">

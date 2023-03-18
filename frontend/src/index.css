@@ -4,6 +4,36 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .btn-primary {
+    @apply w-full bg-primary text-white py-1.5 px-2 xl:py-2 xl:px-4 hover:bg-stone-800 disabled:bg-stone-700 text-xs md:text-sm rounded-sm tracking-tighter;
+  }
+
+  .btn-secondary {
+    @apply w-full bg-secondary text-white py-1.5 px-2 xl:py-2 xl:px-4 hover:brightness-95 text-xs md:text-sm rounded-sm tracking-tighter mt-1;
+  }
+
+  .back-button {
+    @apply absolute top-2 -left-1 py-0.5 px-3 rounded-tr-md rounded-br-md rounded-tl-sm rounded-bl-sm bg-stone-900 text-white text-sm;
+  }
+
+  .page {
+    @apply px-2 lg:px-0;
+  }
+
+  .wrapper {
+    @apply bg-white shadow-sm shadow-stone-200 mt-1 p-2 text-xs xl:text-sm rounded-sm;
+  }
+
+  .center {
+    @apply flex items-center justify-center;
+  }
+
+  .items-between {
+    @apply flex items-center justify-between;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +42,7 @@
 
 body {
   font-family: "Rubik", sans-serif;
-  color: #120a02;
+  color: #1c1917;
   background-color: #fafaf9;
 }
 

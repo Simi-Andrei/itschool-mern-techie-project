@@ -1,4 +1,4 @@
 const Page = ({ children }) => {
-  return <section className="px-2 lg:px-0">{children}</section>;
+  return <section className="page">{children}</section>;
 };
 export default Page;

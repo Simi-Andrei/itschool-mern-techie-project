@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useFormik } from "formik";
-import { Page } from "../components/index";
+import { Page, PrimaryButton } from "../components/index";
 import * as Yup from "yup";
 import { login, reset } from "../features/user/userSlice";
 
@@ -50,7 +50,7 @@ const Loginpage = () => {
 
   return (
     <Page>
-      <div className="bg-white p-10 text-stone-900 relative shadow-shadow mt-20 flex flex-col items-center justify-start w-full max-w-[320px] mx-auto">
+      <div className="bg-white p-10 relative shadow-shadow mt-20 flex flex-col items-center justify-start w-full max-w-[320px] mx-auto">
         <div
           className="bg-secondary p-1 absolute top-0 left-[50%]
             -translate-y-[50%] -translate-x-[50%] rounded-full"
@@ -113,12 +113,10 @@ const Loginpage = () => {
               </p>
             )}
           </div>
-          <button
-            className="w-full bg-stone-900 text-white py-2 px-4 hover:bg-stone-800 disabled:opacity-50 mt-4 uppercase"
+          <PrimaryButton
             type="submit"
-          >
-            {loading ? "Logging in..." : "Login"}
-          </button>
+            text={loading ? "Logging in..." : "Login"}
+          />
           <div className="mt-10 text-center">
             <p className="text-xs">
               Don't have an account?{" "}

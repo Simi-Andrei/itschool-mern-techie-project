@@ -2,7 +2,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { BsArrowRight, BsTrash } from "react-icons/bs";
-import { Heading, Page, Wrapper } from "../components/index";
+import {
+  Heading,
+  Page,
+  PrimaryButton,
+  SecondaryButton,
+  Wrapper,
+} from "../components/index";
 import { removeItemFromCart, clearCart } from "../features/cart/cartSlice";
 
 const Cartpage = () => {
@@ -63,10 +69,7 @@ const Cartpage = () => {
             <div className="w-full md:w-[64.2%]">
               <Heading text="Cart" button address={-1} />
               {cartItems.map((item) => (
-                <Wrapper
-                  key={item._id}
-                  className="flex items-center justify-between"
-                >
+                <Wrapper key={item._id} className="items-between">
                   <div className="w-[20%] md:w-[25%] grid place-items-center">
                     <img src={item.image} alt="product" width={50} />
                   </div>
@@ -84,7 +87,7 @@ const Cartpage = () => {
                       {item.quantity})
                     </p>
                   </div>
-                  <div className="w-[10%] md:w-[20%] flex items-center justify-center">
+                  <div className="w-[10%] md:w-[20%] center">
                     <button
                       className="bg-stone-900 md:hidden text-white p-2 md:px-4 rounded-sm hover:brightness-95 disabled:opacity-50"
                       onClick={() => removeItemFromCartHandler(item._id)}
@@ -92,7 +95,7 @@ const Cartpage = () => {
                       <BsTrash />
                     </button>
                     <button
-                      className="hidden md:block bg-white text-stone-900 py-1 px-1 md:px-4 rounded-sm hover:bg-stone-200 disabled:opacity-50"
+                      className="hidden md:block bg-white py-1 px-1 md:px-4 rounded-sm hover:bg-stone-200 disabled:opacity-50"
                       onClick={() => removeItemFromCartHandler(item._id)}
                     >
                       Remove
@@ -100,25 +103,22 @@ const Cartpage = () => {
                   </div>
                 </Wrapper>
               ))}
-              <div className="text-xs xl:text-sm">
-                <button
-                  className="w-full bg-secondary text-white shadow-sm shadow-stone-200 mt-1 tracking-tighter py-2 px-4 hover:brightness-95 disabled:opacity-50 rounded-sm"
-                  onClick={clearCartHandler}
-                >
-                  Empty cart
-                </button>
-              </div>
+              <SecondaryButton
+                type="button"
+                text="Empty cart"
+                onClick={clearCartHandler}
+              />
             </div>
             <div className="w-full md:w-[35.4%] mt-1 md:mt-0">
               <Heading text="Total" />
               {cartItems.length > 0 && (
                 <Wrapper>
-                  <div className="flex items-center justify-between my-2">
+                  <div className="items-between my-2">
                     <p>Products price:</p>
                     <p className="font-semibold">${itemsPrice.toFixed(2)}</p>
                   </div>
                   <div className="flex flex-col border-b border-b-secondary pb-2">
-                    <div className="flex items-center justify-between">
+                    <div className="items-between">
                       <p>Delivery price:</p>
                       <p className="font-semibold">
                         ${deliveryPrice.toFixed(2)}
@@ -128,18 +128,17 @@ const Cartpage = () => {
                       (free delivery for orders above $50)*
                     </p>
                   </div>
-                  <div className="flex items-center justify-between font-semibold mt-2">
+                  <div className="items-between font-semibold">
                     <p>Total price:</p>
                     <p>${totalPrice.toFixed(2)}</p>
                   </div>
-                  <div>
-                    <button
+                  <div className="mt-2">
+                    <PrimaryButton
+                      type="button"
+                      text="Checkout"
                       onClick={checkoutHandler}
-                      className="w-full bg-stone-900 text-white py-2 px-4 hover:bg-stone-800 disabled:opacity-50 mt-4"
                       disabled={cartItems.length === 0}
-                    >
-                      Checkout
-                    </button>
+                    />
                   </div>
                 </Wrapper>
               )}

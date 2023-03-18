@@ -76,9 +76,9 @@ const Header = () => {
                   />
                 </button>
                 {accMenuOpen && (
-                  <ul className="absolute shadow-md w-36 top-8 -right-4 text-right bg-white text-stone-900 p-2">
+                  <ul className="absolute shadow-md w-36 top-8 -right-4 text-right bg-white text-primary p-2">
                     <p
-                      className="capitalize cursor-default block w-full py-2 px-4 text-sm text-stone-900 font-semibold"
+                      className="capitalize cursor-default block w-full py-2 px-4 text-sm font-semibold"
                       data-te-dropdown-item-ref
                     >
                       {currentUser && currentUser.name}
@@ -153,9 +153,9 @@ const Header = () => {
                     />
                   </button>
                   {accMenuOpen && (
-                    <ul className="absolute shadow-md w-36 top-8 -right-4 text-right bg-white text-stone-900 p-2">
+                    <ul className="absolute shadow-md w-36 top-8 -right-4 text-right bg-white text-primary p-2">
                       <p
-                        className="capitalize cursor-default block w-full py-2 px-4 text-sm text-stone-900 font-semibold"
+                        className="capitalize cursor-default block w-full py-2 px-4 text-sm font-semibold"
                         data-te-dropdown-item-ref
                       >
                         {currentUser && currentUser.name}

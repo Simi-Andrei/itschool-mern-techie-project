@@ -1,10 +1,9 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Rating } from "../components/index";
+import { PrimaryButton, Rating } from "../components/index";
 import Carousel from "react-multi-carousel";
 import { toast } from "react-toastify";
-import { RiShoppingCartLine } from "react-icons/ri";
 import {
   BsChevronCompactLeft,
   BsChevronCompactRight,
@@ -146,17 +145,16 @@ const BestSellersCarousel = () => {
                       {product.numReviews} reviews
                     </span>
                   </div>
-                  <div className="mt-4 flex items-center justify-end">
-                    <button
+                  <div className="mt-2">
+                    <PrimaryButton
+                      type="button"
+                      text={
+                        product.stock === 0 ? "Out of stock" : "Add to cart"
+                      }
                       onClick={() => addItemToCartHandler(product._id)}
-                      className="w-full bg-stone-900 rounded-sm uppercase text-white text-xs py-2 px-4 hover:bg-stone-800 disabled:bg-stone-500 flex items-center justify-center"
+                      className="center"
                       disabled={product.stock === 0}
-                    >
-                      <RiShoppingCartLine className="text-[0.9rem] mr-1" />
-                      <span className="ml-1">
-                        {product.stock === 0 ? "Out of stock" : "Add to cart"}
-                      </span>
-                    </button>
+                    />
                   </div>
                 </div>
               </div>

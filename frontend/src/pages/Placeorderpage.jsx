@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import { Heading, Page, Wrapper } from "../components/index";
+import { Heading, PrimaryButton, Page, Wrapper } from "../components/index";
 import { placeOrder, reset } from "../features/order/orderSlice";
 import { clearCart } from "../features/cart/cartSlice";
 
@@ -84,7 +84,7 @@ const Placeorderpage = () => {
               {cartItems.map((item) => (
                 <div
                   key={item._id}
-                  className="flex items-center justify-between mt-2 pb-2 border-b border-b-secondary last:border-b-0 text-xs xl:text-sm"
+                  className="items-between mt-2 pb-2 border-b border-b-secondary last:border-b-0 text-xs xl:text-sm"
                 >
                   <div className="w-3/12 grid place-items-center">
                     <img src={item.image} alt="product" width={50} />
@@ -113,12 +113,12 @@ const Placeorderpage = () => {
           <Wrapper>
             {cartItems.length > 0 && (
               <div className="flex flex-col">
-                <div className="flex items-center justify-between my-2">
+                <div className="items-between my-2">
                   <p>Products price:</p>
                   <p className="font-semibold">${itemsPrice.toFixed(2)}</p>
                 </div>
                 <div className="flex flex-col  border-b border-b-secondary pb-2">
-                  <div className="flex items-center justify-between">
+                  <div className="items-between">
                     <p>Delivery price:</p>
                     <p className="font-semibold">${deliveryPrice.toFixed(2)}</p>
                   </div>
@@ -126,19 +126,20 @@ const Placeorderpage = () => {
                     (free delivery for orders above $50)*
                   </p>
                 </div>
-                <div className="flex items-center justify-between font-semibold mt-2">
+                <div className="items-between font-semibold mt-2">
                   <p>Total price:</p>
                   <p>${totalPrice.toFixed(2)}</p>
                 </div>
                 <div className="text-center">
                   {error && <p className="mt-6">{message}</p>}
-                  <button
-                    onClick={placeOrderHandler}
-                    className="w-full bg-stone-900 text-white py-2 px-4 hover:bg-stone-800 disabled:opacity-50 mt-4"
-                    disabled={cartItems.length === 0}
-                  >
-                    {loading ? "Placing order..." : "Place order"}
-                  </button>
+                  <div className="mt-2">
+                    <PrimaryButton
+                      type="button"
+                      text={loading ? "Placing order..." : "Place order"}
+                      onClick={placeOrderHandler}
+                      disabled={cartItems.length === 0}
+                    />
+                  </div>
                 </div>
               </div>
             )}

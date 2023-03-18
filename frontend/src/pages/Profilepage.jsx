@@ -3,7 +3,13 @@ import { useNavigate, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { FaCheck, FaTimes } from "react-icons/fa";
 import { toast } from "react-toastify";
-import { Heading, Loader, Page, Wrapper } from "../components/index";
+import {
+  Heading,
+  SecondaryButton,
+  Loader,
+  Page,
+  Wrapper,
+} from "../components/index";
 import { getProfile, updateProfile, reset } from "../features/user/userSlice";
 import { getOrders } from "../features/order/orderSlice";
 
@@ -150,17 +156,17 @@ const Profilepage = () => {
                   </label>
                 </div>
                 <div className="md:w-1/2 lg:w-full mx-auto">
-                  <button
-                    className="w-full bg-secondary text-white shadow-sm shadow-stone-200 tracking-tighter py-2 px-4 hover:brightness-95 disabled:opacity-50 rounded-sm"
-                    type="submit"
+                  <SecondaryButton
+                    type="Submit"
+                    text={
+                      loading
+                        ? "Updating..."
+                        : !name && !email && !password && !confirmPassword
+                        ? "Nothing to update"
+                        : "Update"
+                    }
                     disabled={!name && !email && !password && !confirmPassword}
-                  >
-                    {loading
-                      ? "Updating..."
-                      : !name && !email && !password && !confirmPassword
-                      ? "Nothing to update"
-                      : "Update"}
-                  </button>
+                  />
                 </div>
               </form>
             </Wrapper>

@@ -49,7 +49,7 @@ const App = () => {
           <Router>
             <div className="flex flex-col min-h-screen">
               <Header />
-              <main className="flex-1 rounded-sm bg-stone-50 w-full lg:w-8/12 mx-auto mt-28 md:mt-20 mb-4">
+              <main className="flex-1 rounded-sm bg-stone-50 w-full lg:w-8/12 mx-auto mt-28 md:mt-20 mb-10">
                 <Routes>
                   <Route path="/" element={<Homepage />} />
                   <Route

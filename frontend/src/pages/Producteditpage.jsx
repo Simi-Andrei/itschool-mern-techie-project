@@ -2,7 +2,13 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { Heading, Loader, Page, Wrapper } from "../components/index";
+import {
+  Heading,
+  SecondaryButton,
+  Loader,
+  Page,
+  Wrapper,
+} from "../components/index";
 import {
   getSingleProduct,
   updateProduct,
@@ -173,12 +179,7 @@ const Producteditpage = () => {
                 </label>
               </div>
               <div className="md:w-1/2 mx-auto">
-                <button
-                  className="w-full bg-secondary text-white shadow-sm shadow-stone-200 tracking-tighter py-2 px-4 hover:brightness-95 disabled:opacity-50 rounded-sm"
-                  type="submit"
-                >
-                  Update
-                </button>
+                <SecondaryButton type="submit" text="Update" />
               </div>
             </form>
           </Wrapper>

@@ -2,7 +2,14 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import { Heading, Rating, Loader, Page, Wrapper } from "../components/index";
+import {
+  Heading,
+  PrimaryButton,
+  Rating,
+  Loader,
+  Page,
+  Wrapper,
+} from "../components/index";
 import { BsHeartFill, BsStarFill } from "react-icons/bs";
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en.json";
@@ -171,13 +178,15 @@ const Productpage = () => {
                 ></span>
                 {product.stock === 0 ? "Out of stock" : "In stock"}
               </p>
-              <button
-                onClick={() => addItemToCartHandler(product._id)}
-                className="w-full md:w-1/2 bg-stone-900 rounded-sm uppercase text-white text-xs py-2 my-2 hover:bg-stone-800 disabled:bg-stone-500"
-                disabled={product.stock === 0}
-              >
-                {product.stock === 0 ? "Out of stock" : "Add to cart"}
-              </button>
+              <div className="mt-2">
+                <PrimaryButton
+                  type="button"
+                  text={product.stock === 0 ? "Out of stock" : "Add to cart"}
+                  onClick={() => addItemToCartHandler(product._id)}
+                  className="md:w-1/2"
+                  disabled={product.stock === 0}
+                />
+              </div>
               <p className="text-gray-500 text-xs mt-2">
                 Currently sold: {product.sold}
               </p>
@@ -401,12 +410,12 @@ const Productpage = () => {
                       ></textarea>
                     </div>
                     <div className="w-full md:w-1/6">
-                      <button
-                        className="w-full bg-stone-900 text-white py-2 px-4 hover:bg-stone-800 disabled:opacity-50"
+                      <PrimaryButton
                         type="submit"
-                      >
-                        {loadingReview ? "Leaving review..." : "Leave review"}
-                      </button>
+                        text={
+                          loadingReview ? "Leaving review..." : "Leave review"
+                        }
+                      />
                     </div>
                   </form>
                 </div>

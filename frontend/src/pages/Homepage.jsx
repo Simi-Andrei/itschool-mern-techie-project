@@ -24,7 +24,7 @@ const Homepage = () => {
         </p>
       </div>
       <HeroSwiper />
-      <h2 className="mt-20 text-xl tracking-tighter text-center">
+      <h2 className="mt-10 md:mt-20 text-xl tracking-tighter text-center">
         Find below our best selling <span className="text-secondary">tech</span>{" "}
         products
       </h2>

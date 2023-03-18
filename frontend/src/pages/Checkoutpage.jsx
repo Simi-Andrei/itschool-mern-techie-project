@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Heading, Page, Wrapper } from "../components/index";
+import { Heading, Page, SecondaryButton, Wrapper } from "../components/index";
 import { SlPaypal } from "react-icons/sl";
 import {
   saveDeliveryAddress,
@@ -118,7 +118,7 @@ const Checkoutpage = () => {
                 Country
               </label>
             </div>
-            <div className="my-8 w-full md:w-1/2 mx-auto flex items-center justify-center">
+            <div className="my-8 w-full md:w-1/2 mx-auto center">
               <input
                 className="focus:outline-none mr-4 cursor-pointer accent-secondary"
                 type="checkbox"
@@ -141,12 +141,7 @@ const Checkoutpage = () => {
               we hope to add more methods )
             </p>
             <div className="md:w-1/2 mx-auto">
-              <button
-                className="w-full bg-secondary text-white shadow-sm shadow-stone-200 tracking-tighter py-2 px-4 hover:brightness-95 disabled:opacity-50 rounded-sm"
-                type="submit"
-              >
-                Continue
-              </button>
+              <SecondaryButton type="submit" text="Continue" />
             </div>
           </form>
         </Wrapper>
