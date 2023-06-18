@@ -89,7 +89,7 @@ const Searchpage = () => {
               <li className="w-full flex" key={c}>
                 <Link
                   className={`"block w-full mt-1 py-1 px-2 rounded-sm " ${
-                    c !== category && "hover:bg-stone-100"
+                    c !== category && "hover:bg-stone-200"
                   } ${
                     c === category
                       ? "bg-secondary text-white hover:bg-secondary"
@@ -112,7 +112,6 @@ const Searchpage = () => {
                     : c === "mics"
                     ? "Microphones"
                     : "Watches"}{" "}
-                  <span className="text-xxs">({products.length} products)</span>
                 </Link>
               </li>
             ))}

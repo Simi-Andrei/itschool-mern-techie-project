@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
-import { SecondaryButton } from "../components/index";
+import { SecondaryButton, Wrapper } from "../components/index";
 
 const ContactForm = () => {
   const form = useRef();
@@ -31,8 +31,8 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="w-full mt-20 mb-10 border border-gray-200 flex flex-wrap justify-between">
-      <div className="w-full md:w-1/2 flex flex-col items-center justify-center p-2 pt-4 md:px-16">
+    <Wrapper className="mt-20 mb-10 flex flex-wrap justify-between">
+      <div className="w-full md:w-1/2 flex flex-col items-center justify-center pt-4 md:px-16">
         <div className="bg-secondary p-1 w-16 h-16 rounded-full mb-4">
           <div className="bg-stone-900 rounded-full w-full h-full flex flex-col items-center justify-center font-bold">
             <p className="leading-none text-white">
@@ -49,7 +49,7 @@ const ContactForm = () => {
           feedback about purchased products or your shopping experience!
         </p>
       </div>
-      <div className="w-full md:w-1/2 p-2 pt-4 md:px-16 grid place-items-center">
+      <div className="w-full md:w-1/2 pt-4 md:px-16 grid place-items-center">
         <form
           ref={form}
           onSubmit={sendEmail}
@@ -95,7 +95,7 @@ const ContactForm = () => {
           <SecondaryButton type="submit" text="Send" />
         </form>
       </div>
-    </div>
+    </Wrapper>
   );
 };
 export default ContactForm;
